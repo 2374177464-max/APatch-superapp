@@ -56,7 +56,7 @@ android {
     namespace = "me.bmax.apatch"
 
     defaultConfig {
-        applicationId = "github.ColdAsSunny.Kernel"
+        applicationId = "com.superapp.app"
         }
 
     buildTypes {
