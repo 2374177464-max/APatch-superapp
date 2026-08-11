@@ -55,6 +55,10 @@ val baseArgs = mutableListOf(
 android {
     namespace = "me.bmax.apatch"
 
+    defaultConfig {
+        applicationld = "com.superapp.app"
+        }
+
     buildTypes {
         debug {
             isDebuggable = true
