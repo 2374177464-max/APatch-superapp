@@ -25,8 +25,8 @@ jobs:
       - name: Generate version
         id: parse_version
         run: |
-          COMMIT_NUM=$(git rev-list --count HEAD)
-          VERSION=$(echo "$COMMIT_NUM + 200 + 10000" | bc)
+          # 手动指定版本号
+          VERSION=11224
           echo "Generated Version: $VERSION"
           echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
 
@@ -92,17 +92,3 @@ jobs:
           name: APatch-Release
           path: |
             ${{ steps.sign_app.outputs.signedReleaseFile }}
-
-      - name: Release apk
-        env:
-          SIGNING_KEY: ${{ secrets.SIGNING_KEY }}
-        if: ${{ env.SIGNING_KEY != '' && github.ref_type == 'tag' }}
-        continue-on-error: true
-        uses: ncipollo/release-action@v1
-        with:
-          token: ${{ github.token }}
-          tag: ${{ steps.parse_version.outputs.VERSION }}
-          artifacts: ${{steps.sign_app.outputs.signedReleaseFile}}
-          generateReleaseNotes: true
-          makeLatest: true
-          replacesArtifacts: true
