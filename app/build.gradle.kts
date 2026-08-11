@@ -56,7 +56,7 @@ android {
     namespace = "me.bmax.apatch"
 
     defaultConfig {
-        applicationld = "com.superapp.app"
+        applicationid = "com.superapp.app"
         }
 
     buildTypes {
