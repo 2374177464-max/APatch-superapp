@@ -11,12 +11,8 @@ val androidTargetSdkVersion by extra(36)
 val androidCompileSdkVersion by extra(36)
 val androidBuildToolsVersion by extra("36.1.0")
 val androidCompileNdkVersion by extra("29.0.14206865")
-// 手动指定版本号（从官方获取）
-val OFFICIAL_VERSION_CODE = 20743  // 官方当前的 VERSION_CODE
-val MY_OFFSET = 1  // 你的自定义偏移量，每次发布自增1
-
-val managerVersionCode by extra(OFFICIAL_VERSION_CODE + MY_OFFSET)
-// 版本名可以继续使用 Git Hash，或者手动指定
+// 手动指定版本号，以便同步官方版本，避免超出官方太多
+val managerVersionCode by extra(11224)
 val managerVersionName by extra(getVersionName())
 val branchName by extra(getBranch())
 fun Project.exec(command: String) = providers.exec {
