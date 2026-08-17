@@ -27,7 +27,7 @@ jobs:
         id: parse_version
         run: |
           # 手动指定版本号
-          VERSION=11224
+          VERSION=11258
           echo "Generated Version: $VERSION"
           echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
 
