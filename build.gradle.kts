@@ -13,7 +13,7 @@ extra.set("androidTargetSdkVersion", 36)
 extra.set("androidCompileSdkVersion", 37)
 extra.set("androidBuildToolsVersion", "36.1.0")
 extra.set("androidCompileNdkVersion", "29.0.14206865")
-extra.set("managerVersionCode", getVersionCode())
+extra.set("managerVersionCode", 11258)
 extra.set("managerVersionName", getVersionName())
 extra.set("branchName", getBranch())
 fun Project.exec(command: String) = providers.exec {
