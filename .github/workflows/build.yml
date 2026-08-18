@@ -1,15 +1,15 @@
 name: Build Manager
 
 on:
-  push:
-    branches: [ "main" ]
-    paths:
-      - '.github/workflows/build.yml'
-      - 'app/**'
-      - 'apd/**'
-      - 'build.gradle.kts'
-      - 'gradle/libs.versions.toml'
-      - 'version.properties'
+#  push:
+#    branches: [ "main" ]
+#    paths:
+#      - '.github/workflows/build.yml'
+#      - 'app/**'
+#      - 'apd/**'
+#      - 'build.gradle.kts'
+#      - 'gradle/libs.versions.toml'
+#      - 'version.properties'
   workflow_dispatch:
 
 jobs:
@@ -27,7 +27,7 @@ jobs:
         id: parse_version
         run: |
           # 手动指定版本号
-          VERSION=11258
+          VERSION=112259
           echo "Generated Version: $VERSION"
           echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
 
