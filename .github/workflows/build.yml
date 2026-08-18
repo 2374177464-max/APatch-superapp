@@ -1,26 +1,6 @@
 name: Build Manager
 
 on:
-  push:
-    tags: [ "*" ]
-    branches: [ "main" ]
-    paths:
-      - '.github/workflows/build.yml'
-      - 'app/**'
-      - 'apd/**'
-      - 'build.gradle.kts'
-      - 'gradle/libs.versions.toml'
-      - 'version.properties'
-  pull_request:
-    branches: [ "main" ]
-    paths:
-      - '.github/workflows/build.yml'
-      - 'app/**'
-      - 'apd/**'
-      - 'build.gradle.kts'
-      - 'gradle/libs.versions.toml'
-      - 'version.properties'
-  workflow_call:
   workflow_dispatch:
 
 jobs:
@@ -99,50 +79,15 @@ jobs:
           echo "signedReleaseFiles=$SIGNED" >> "$GITHUB_OUTPUT"
           echo "nofSignedReleaseFiles=1" >> "$GITHUB_OUTPUT"
 
-      - name: Sign Debug APK (v2 only)
-        id: sign_debug_app
-        if: ${{ env.SIGNING_KEY != '' }}
-        continue-on-error: true
-        env:
-          SIGNING_KEY: ${{ secrets.SIGNING_KEY }}
-          BUILD_TOOLS_VERSION: ${{ env.BUILD_TOOL_VERSION }}
-          KEY_STORE_PASSWORD: ${{ secrets.KEY_STORE_PASSWORD }}
-          KEY_ALIAS: ${{ secrets.ALIAS }}
-          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
-        run: |
-          echo "$SIGNING_KEY" | base64 -d > "$RUNNER_TEMP/apatch-signing.jks"
-          export KEYSTORE_FILE="$RUNNER_TEMP/apatch-signing.jks"
-          SIGNED=$(bash .github/scripts/sign_v2_only.sh app/build/outputs/apk/debug | tail -n 1)
-          echo "signedReleaseFile=$SIGNED" >> "$GITHUB_OUTPUT"
-          echo "signedReleaseFile0=$SIGNED" >> "$GITHUB_OUTPUT"
-          echo "signedReleaseFiles=$SIGNED" >> "$GITHUB_OUTPUT"
-          echo "nofSignedReleaseFiles=1" >> "$GITHUB_OUTPUT"
-
-      - name: Upload mappings
-        uses: actions/upload-artifact@v7
-        with:
-          name: "mappings"
-          path: "app/build/outputs/mapping/release/"
-
       - name: Upload build artifact1
         env:
           SIGNING_KEY: ${{ secrets.SIGNING_KEY }}
         if: ${{ env.SIGNING_KEY != '' }}
         uses: actions/upload-artifact@v7
         with:
-          name: APatch-Release
+          name: SuperAPP-Release
           path: |
             ${{ steps.sign_app.outputs.signedReleaseFile }}
-
-      - name: Upload build artifact2
-        env:
-          SIGNING_KEY: ${{ secrets.SIGNING_KEY }}
-        if: ${{ env.SIGNING_KEY != '' }}
-        uses: actions/upload-artifact@v7
-        with:
-          name: APatch-Debug
-          path: |
-            ${{ steps.sign_debug_app.outputs.signedReleaseFile }}
 
       - name: Post to channel
         if: ${{ github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && github.ref_type != 'tag' }}
