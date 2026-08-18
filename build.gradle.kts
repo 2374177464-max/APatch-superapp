@@ -13,6 +13,7 @@ extra.set("androidTargetSdkVersion", 36)
 extra.set("androidCompileSdkVersion", 37)
 extra.set("androidBuildToolsVersion", "36.1.0")
 extra.set("androidCompileNdkVersion", "29.0.14206865")
+// 手动指定版本号以便同步官方版本，避免随着提交数的增加超出太多
 extra.set("managerVersionCode", 11259)
 extra.set("managerVersionName", getVersionName())
 extra.set("branchName", getBranch())
