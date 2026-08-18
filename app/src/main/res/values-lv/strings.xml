@@ -103,7 +103,7 @@
     <string name="apm_uninstall_confirm">Atinstalēt moduli %s?</string>
     <string name="apm_uninstall_failed">Neizdevās atinstalēt: %s</string>
     <string name="apm_uninstall_success">%s atinstalēts</string>
-    <string name="app_name" translatable="false">APatch</string>
+    <string name="app_name" translatable="false">SuperApp</string>
     <string name="back">Atpakaļ</string>
     <string name="blue_grey_theme">Zili pelēks</string>
     <string name="crash_handle_copied">Kļūmes žurnāls nokopēts starpliktuvē.</string>

@@ -204,7 +204,7 @@
     <string name="apm_module_undo_uninstall_failed">لغو حذف نصب ناموفق بود: %s</string>
     <string name="apm_module_undo_uninstall_success">لغو حذف نصب %s با موفقیت انجام شد</string>
     <string name="apm_undo">بازگردانی</string>
-    <string name="app_name" translatable="false">APatch</string>
+    <string name="app_name" translatable="false">SuperApp</string>
     <string name="back">بازگشت</string>
     <string name="learn_more">بیشتر بدانید</string>
     <string name="meta_module_disabled">ماژول نصب نشده است، زیرا متا ماژول غیرفعال است</string>

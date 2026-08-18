@@ -135,7 +135,7 @@
     <string name="apm_uninstall_success">%s desinstal·lat</string>
     <string name="apm_update">Actualitza</string>
     <string name="apm_webui_open">Obre</string>
-    <string name="app_name" translatable="false">APatch</string>
+    <string name="app_name" translatable="false">SuperApp</string>
     <string name="back">Enrere</string>
     <string name="blue_grey_theme">Gris blavós</string>
     <string name="blue_theme">Blau</string>

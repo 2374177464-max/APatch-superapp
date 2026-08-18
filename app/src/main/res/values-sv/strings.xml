@@ -181,7 +181,7 @@
     <string name="apm_module_undo_uninstall_success">Avinstallationen av %s avbröts framgångsrikt</string>
     <string name="apm_reboot_to_apply">Starta om för att ändringarna ska träda i kraft</string>
     <string name="apm_undo">Ångra</string>
-    <string name="app_name" translatable="false">APatch</string>
+    <string name="app_name" translatable="false">SuperApp</string>
     <string name="back">Tillbaka</string>
     <string name="crash_handle_copied">Kraschloggen kopierades till urklipp.</string>
     <string name="crash_handle_copy">Kopiera kraschlogg</string>

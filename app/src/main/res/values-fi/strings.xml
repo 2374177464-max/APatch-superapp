@@ -204,7 +204,7 @@
     <string name="apm_module_undo_uninstall_failed">Asennuksen poiston kumoaminen epäonnistui: %s</string>
     <string name="apm_module_undo_uninstall_success">%s:n asennuksen poisto peruutettu onnistuneesti</string>
     <string name="apm_undo">Kumoa</string>
-    <string name="app_name" translatable="false">APatch</string>
+    <string name="app_name" translatable="false">SuperApp</string>
     <string name="back">Takaisin</string>
     <string name="learn_more">Lue lisää</string>
     <string name="meta_module_disabled">moduulia ei liitetty, koska metamoduuli on poistettu käytöstä</string>
