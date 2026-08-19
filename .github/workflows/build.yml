@@ -85,7 +85,7 @@ jobs:
         if: ${{ env.SIGNING_KEY != '' }}
         uses: actions/upload-artifact@v7
         with:
-          name: SuperAPP-Release
+          name: SuperApp-Release
           path: |
             ${{ steps.sign_app.outputs.signedReleaseFile }}
 
